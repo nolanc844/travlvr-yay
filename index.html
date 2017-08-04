@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travlvr</title>
+    <!--aframe-->
+    <script src="script.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+    <!-- This is a test! -->
+        <a-entity>
+            <a-camera>
+                <a-cursor color="white"></a-cursor>
+            </a-camera>
+        </a-entity>
+        <!-- <a-sky id="background" src="360-photos/blackpic.jpg"></a-sky> -->
+        <a-assets>
+            <!-- <video id="NewZealandBeaches" autoplay loop="true" src="beachh.mp4"></video>
+            <video id="YellowStone" autoplay loop="true" src="np.mp4"></video>
+            <video id="MountRush" autoplay loop="true" src="rushmore.mp4"></video>
+            <video id="music" autoplay loop="true" src="soarin.mp4"></video> -->
+            <!--Beaches -->
+            <img src="HanolaCave(ocean1).jpg" id="hanola">
+           <!--  <videosphere src="beach.mp4" id="video"></videosphere> -->
+            <img src="Rockaway(ocean4).jpg" id="rockaway">
+            <img src="miami(ocean5).jpg" id="miami">
+            <img src="islamujeres(ocean2).jpg" id="isla">
+            <img src="Manly(ocean3).jpg" id="manly">
+            <!--Monuments-->
+            <img src="petra(monument1).jpg" id="petra">
+            <img src="sydney(monument4).jpg" id="sydneyOpera">
+            <img src="9_11(monument5).jpg" id="911">
+            <img src="collesium(monument2).jpg" id="collesium">
+            <img src="arcparis(monument3).jpg" id="arcparis">
+
+            <!--National Parks-->
+            <!-- <img src="bigbend.jpg" id="bigBend"> -->
+            <!--  <img src="yosemite.jpg" id="yosemite">-->
+            <img src="redwood(np5).jpg" id="redwood">
+            <img src="kingscanyon(np4).jpg" id="kings">
+           <!--  <videosphere src="yosemite.mp4" id="yosemite"></videosphere> -->
+            <!-- <img src="360-photos/blackpic.jpg" id="blackHome"> -->
+            <a-asset-item id="familyfont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+
+        </a-assets>
+        <a-sphere color="blue" position="0 -7 -15">
+        <!--start page-->
+        <a-entity visible=true id="homePage">
+            <!--<a-box color="white" depth="1" height=".5" width="4" position="0 4 -13"></a-box>-->
+            <a-entity text-geometry="value: Explore Historic Sites; font: #familyfont;" position="-3.021 4 -12"></a-entity>
+            <!--<a-text value="Explore Historical Sites" position="0 4 -12" color="red" text.font="stylesheet"></a-text>-->
+            <!--<a-box color="black" depth="1" height=".5" width="4" position="7 -5.5 -13"></a-box>-->
+            <a-entity text-geometry="value: Explore Beaches; font: #familyfont;" position="-9 -5.118 -12"></a-entity>
+            <!--<a-text value="Explore Historical Sites" position="0 4 -12" color="red" text.font="stylesheet"></a-text>-->
+            <!--<a-box color="black" depth="1" height=".5" width="4" position="-7 -5.5 -13"></a-box>-->
+            <a-entity text-geometry="value: Explore National Parks; font: #familyfont;" position="3.295 -5.1 -12"></a-entity>
+            <!--<a-text value="Explore Historical Sites" position="0 4 -12" color="red" text.font="stylesheet"></a-text>-->
+           <!--  <a-videosphere visible=true onclick="changeToBeach1()" id="sphere1" src="#NewZealandBeaches" radius="5" position="-7 0 -15">
+                <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+            </a-videosphere>
+            <a-videosphere visible=true onclick="changeToParks()" id="sphere2" src="#YellowStone" radius="5" position="7 0 -15">
+                <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+            </a-videosphere>
+            <a-videosphere visible=true onclick="changeToMonuments()" id="sphere3" src="#MountRush" radius="5" position="0 10 -15">
+                <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+            </a-videosphere>
+            <a-videosphere visible=true onclick="changeToMonuments()" color="black" src="#music" radius="1" position="0 10 -2000"></a-videosphere> -->
+
+            <a-sphere visible="true" id="sphere1" src="#hanola" position="-7 0 -15" onclick="changeToBeach1()" radius="5"></a-sphere>
+
+            <a-sphere visible="true" id="sphere2" src="#redwood" position="7 0 -15" radius="5"></a-sphere>
+
+            <a-sphere visible="true" id="sphere3" src="#911" position="0 10 -15" radius="5"></a-sphere>
+
+
+
+
+        </a-entity>
+        <!--beaches-->
+        <!--first beach-->
+        <a-entity id="beach1" visible="false">
+            <a-sphere onclick="nextBeach1()" id="changeToBeach2" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+        <!--second beach-->
+        <a-entity id="beach2" visible="false">
+            <a-sphere onclick="nextBeach2()" id="changeToBeach3" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+        <!--third beach-->
+        <a-entity id="beach3" visible="false">
+            <a-sphere onclick="nextBeach3()" id="changeToBeach4" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+        <!--fourth beach-->
+        <a-entity id="beach4" visible="false">
+            <a-sphere onclick="nextBeach4()" id="changeToBeach5" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+        <!--fifth beach-->
+        <a-entity id="beach5" visible="false">
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+
+        <!--monuments-->
+        <!--first monument-->
+        <a-entity id="monument1" visible="false">
+            <a-sphere onclick="nextMonument1()" id="changeToMonument2" radius="2" position="15 -6 -8" color="pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="yellow"></a-sphere>
+        </a-entity>
+        <!--second monument-->
+        <a-entity id="monument2" visible="false">
+            <a-sphere onclick="nextMonument2()" id="changeToMonument3" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity>
+        <!--third monument -->
+        <!-- <a-entity id="monument3" visible="false">
+            <a-sphere onclick="nextMonument3()" id="changeToMonument4" radius="2" position="15 -6 -8" color: "pink"></a-sphere>
+            <a-sphere onclick="placeToHome()" id="backToHome" radius="2" position="-15 -6 -8" color="pink"></a-sphere>
+        </a-entity> -->
+    </a-scene>
+</body>
+
+</html>
